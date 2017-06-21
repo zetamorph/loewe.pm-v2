@@ -1,4 +1,5 @@
 require("./js/nav.js");
+require("./js/votoSlider.js");
 require("./html/index.html");
 require("./sass/main.scss");
 

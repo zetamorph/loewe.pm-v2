@@ -88,7 +88,19 @@
                   <p class="title"><strong>Voto</strong></p>
                   <p class="subtitle">A Vue.js voting app with an Express.js backend</p>
                   <figure class="image is-3by4 box">
-                    <img src="voto.png">
+                    <img id="voto-preview" src="voto.png">
+                    <!-- Voto image slider -->
+
+                    <div id="voto-modal" class="modal">
+                      <div class="modal-background"></div>
+                      <div class="modal-content">
+                        <p class="image is-4by3">
+                          <img src="http://bulma.io/images/placeholders/1280x960.png">
+                        </p>
+                      </div>
+                      <button class="modal-close"></button>
+                    </div>
+
                   </figure>
                 </article>
               </div>
@@ -137,8 +149,11 @@
           </div>
         </div>
       </div>
+
+      
       <div class="column is-2"></div>
     </div>
+
     <div class="spacer-10"></div>
     <div class="columns">
       <div class="column is-2"></div>
