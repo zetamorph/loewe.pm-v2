@@ -1,4 +1,3 @@
-document.querySelector(".nav-toggle").addEventListener("click", toggleNav);
 function toggleNav() {
   const nav = document.querySelector(".nav-menu");
   const navClassName = nav.className;
@@ -12,3 +11,4 @@ function toggleNav() {
   }
 }
 
+document.querySelector(".nav-toggle").addEventListener("click", toggleNav);
