@@ -84,14 +84,25 @@
   max-height: 100%;
   max-width: 50%;
 }
-// enabling the modal to be larger on big screens
+
+.social-block {
+  font-size: 4rem;
+}
 
 @media screen and (min-width: 769px) {
+  // enabling the modal to be larger 
   .modal-content,
   .modal-card {
     margin: 0 auto;
     max-height: calc(100vh - 40px);
     width: 60vw;
-    
   }
+  //making the contact form bigger
+  .form {
+    width: 100%;
+  } 
+  .form input {
+    width: 50%;
+  }
+
 }
