@@ -15,6 +15,7 @@
 }
 
 .skills-tech-item {
+  width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,10 +29,6 @@
 .hex-container {
   -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-}
-
-.section-heading {
-  padding-bottom: 4rem;
 }
 
 .project-preview {
@@ -97,10 +94,12 @@
     max-height: calc(100vh - 40px);
     width: 60vw;
   }
-  //making the contact form bigger
   .form {
     width: 100%;
   } 
+  .section-heading {
+    padding-bottom: 4rem;
+  }
 
 }
 
