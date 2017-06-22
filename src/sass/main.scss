@@ -8,13 +8,34 @@
   align-items: center;
 }
 
+.tech-column {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+.skills-tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-tech-img {
+  height: 3rem;
+  width: 3rem;
+}
+
 .hex-container {
   -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
 .section-heading {
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
+}
+
+.project-preview {
+  cursor: pointer;
 }
 
 .modal-content {
@@ -26,11 +47,23 @@
   }
 }
 
+.modal-image {
+  transition: opacity 1s ease;
+}
+
+.fade {
+  opacity: 0;
+}
+
 .slider-btn {
   color: white;
   background: rgba(0,0,0,0);
   border: none;
   font-size: 3rem;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }
 
 .project-link-box {
@@ -50,4 +83,15 @@
 .tech-logo {
   max-height: 100%;
   max-width: 50%;
+}
+// enabling the modal to be larger on big screens
+
+@media screen and (min-width: 769px) {
+  .modal-content,
+  .modal-card {
+    margin: 0 auto;
+    max-height: calc(100vh - 40px);
+    width: 60vw;
+    
+  }
 }

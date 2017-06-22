@@ -2,13 +2,12 @@ class ProjectSlider {
   constructor(preview, modalRootId, images) {
     this.preview = document.getElementById(preview);
     this.modalRoot = document.getElementById(modalRootId);
-    console.log(this.modalRoot);
     this.images = images;
   }
 
   init() {
     this.currentSlide = 0;
-    this.imageRoot = this.modalRoot.querySelector(".modal-image");
+    this.imageNode = this.modalRoot.querySelector(".modal-image");
     this.leftBtn = this.modalRoot.querySelector(".slider-btn-left");
     this.rightBtn = this.modalRoot.querySelector(".slider-btn-right");
     this.modalClose = this.modalRoot.querySelector(".modal-close");
@@ -34,7 +33,7 @@ class ProjectSlider {
     else {
       this.currentSlide--;
     }
-    this.imageRoot.src = this.images[this.currentSlide];
+    this.changeImage();
   }
 
   slideRight() {
@@ -44,7 +43,11 @@ class ProjectSlider {
     else {
       this.currentSlide++;
     }
-    this.imageRoot.src = this.images[this.currentSlide];
+    this.changeImage();
+  }
+
+  changeImage() {
+    this.imageNode.src = this.images[this.currentSlide];
   }
 
 };
