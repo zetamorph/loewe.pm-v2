@@ -1,11 +1,14 @@
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
     path: __dirname + "/build",
-    filename: "app.bundle.js"
+    filename: "bundle.js"
   },
   devServer: {
     contentBase: "/build",
@@ -18,6 +21,7 @@ module.exports = {
     loaders: [
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         loaders: [ "file-loader?name=[name].[ext]", "extract-loader", "html-loader" ]
       },
       {
@@ -28,12 +32,18 @@ module.exports = {
       {
         test: /\.js$/, 
         exclude: /node_modules/, 
-        loaders: "babel-loader"
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["env"]
+          }
+        }
       },
       {
         test: /\.(jpe?g|png)$/i,
+        exclude: /node_modules/,
         loaders: [
-          "file-loader?hash=sha512&digest=hex?name=img/[name].[ext]",
+          "file-loader?hash=sha512&digest=hex",
           {
             loader: "image-webpack-loader",
             query: {
@@ -57,6 +67,15 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("styles.bundle.css")
+    new ExtractTextPlugin("styles.bundle.css"),
+    new CleanWebpackPlugin(["build/*.*"]),
+    new UglifyJsPlugin({
+      compressor: false,
+    }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        "NODE_ENV":  JSON.stringify("production")
+      }
+    })
   ] 
 };

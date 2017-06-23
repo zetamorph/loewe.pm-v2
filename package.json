@@ -12,7 +12,9 @@
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.5.2",
     "bulma": "^0.4.2",
+    "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.3",
     "extract-loader": "^0.1.0",
@@ -23,6 +25,8 @@
     "node-sass": "^4.5.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.15.0",
+    "uglify-js": "^3.0.19",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^2.2.1",
     "webpack-node-externals": "^1.6.0"
   }
